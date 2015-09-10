@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+<<<<<<< HEAD
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry exported="true" kind="lib" path="C:/java/Project/SendSMS/lib/httpclient-4.5.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/java/Project/SendSMS/lib/htmlunit-2.18.jar"/>
@@ -25,5 +26,31 @@
 	<classpathentry exported="true" kind="lib" path="C:/java/Project/SendSMS/lib/xercesImpl-2.11.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/java/Project/SendSMS/lib/xml-apis-1.4.01.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/java/Project/SendSMS/lib/commons-cli-1.3.1.jar"/>
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/httpclient-4.5.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/htmlunit-2.18.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/cssparser-0.9.16.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/htmlunit-core-js-2.17.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/httpcore-4.4.1.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/httpmime-4.5.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/jetty-io-9.2.12.v20150709.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/jetty-util-9.2.12.v20150709.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/nekohtml-1.9.22.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/sac-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/serializer-2.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/websocket-api-9.2.12.v20150709.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/websocket-client-9.2.12.v20150709.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/websocket-common-9.2.12.v20150709.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/xalan-2.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/xercesImpl-2.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/xml-apis-1.4.01.jar"/>
+	<classpathentry kind="lib" path="C:/java/Project/SendSMS/lib/commons-cli-1.3.1.jar"/>
+>>>>>>> master
 	<classpathentry kind="output" path="bin"/>
 </classpath>

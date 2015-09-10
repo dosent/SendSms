@@ -42,7 +42,7 @@ public class SendSMS {
 	private static Options options;
 	private static CommandLine cline;
 
-	/**
+	/** 
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -127,7 +127,7 @@ public class SendSMS {
 			System.out.println(s_list_tel[0]);
 			bs.send(s_list_tel[0], s_message);
 			
-			System.out.println(s_list_tel[1]);
+			System.out.println(s_list_tel[0]);
 
 		} catch (ParseException e) {
 			System.out.println("Помощь с ключом -h");
