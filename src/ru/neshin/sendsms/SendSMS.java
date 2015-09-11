@@ -1,18 +1,4 @@
 package ru.neshin.sendsms;
-import com.gargoylesoftware.htmlunit.WebClient;
-import com.gargoylesoftware.htmlunit.html.HtmlDivision;
-import com.gargoylesoftware.htmlunit.html.HtmlForm;
-import com.gargoylesoftware.htmlunit.html.HtmlHiddenInput;
-import com.gargoylesoftware.htmlunit.html.HtmlPage;
-import com.gargoylesoftware.htmlunit.html.HtmlRadioButtonInput;
-import com.gargoylesoftware.htmlunit.html.HtmlSubmitInput;
-import com.gargoylesoftware.htmlunit.html.HtmlTextArea;
-import com.gargoylesoftware.htmlunit.html.HtmlTextInput;
-
-import java.io.IOException;
-import java.util.List;
-
-import javax.xml.bind.DatatypeConverter;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -21,38 +7,20 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
-import com.gargoylesoftware.htmlunit.BrowserVersion;
-import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
-
-import java.io.File;
-
 import java.io.Console;
-
-/**
- * 
- */
-
 /**
  * @author i.neshin
- * 
- *
  */
 public class SendSMS {
-
+	
 	private static Options options;
-	private static CommandLine cline;
 
-	/** 
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		// доделать командную строку
-
 		String s_password = null;
 		String s_ip_device = null;
 		String s_message = null;
 		String s_user = null;
+		String s_line = "4";
 		String s_list_tel[] = null;
 
 		Option o_tel = new Option("t", "telefone", true, "Номер телефона или телефонов");
@@ -60,11 +28,11 @@ public class SendSMS {
 		Option o_user = new Option("u", "user", true, "Имя пользователя");
 		Option o_password = new Option("p", "password", true, "пароль пользователя");
 		Option o_password_input = new Option("i", "in_password", false, "запросить пароль пользователя");
-		Option o_action = new Option("a", "action", false, "Номер канала через какой отправлять смс, по умолчанию 1");
+		Option o_action = new Option("a", "action", true, "Номер канала через какой отправлять смс, по умолчанию 4");
 		Option o_device = new Option("d", "device", true, "ip adress устройства");
 		Option o_help = new Option("h", "help", false, "Помощь");
 		
-		options = new Options(); 
+		options = new Options();  
 		options.addOption(o_message);
 		options.addOption(o_user);
 		options.addOption(o_password);
@@ -79,7 +47,7 @@ public class SendSMS {
 		try {
 			CommandLine cline = parser.parse(options, args);
 			if(cline.hasOption("h")) {
-				System.out.println("Пример вызова sendsms -t 89603725051, 89603725150 -m \"текс сообщения\" -a 4");
+				System.out.println("Пример вызова sendsms -t 89603725051 -p 1234 -d 192.168.15.67 -m \"привет букет\" -u sms -a 3");
 				return;
 	        }
 			
@@ -113,17 +81,17 @@ public class SendSMS {
 				s_list_tel = cline.getOptionValues("t");
 			}
 			if(cline.hasOption("u")) {
-				
 				s_user = cline.getOptionValue("u");
 			}
-	
-
+			if(cline.hasOption("a")) {
+				s_line = cline.getOptionValue("a");
+			}
 
 			if ((s_password == null) ||	(s_ip_device == null) || (s_message == null) || (s_list_tel == null) ||(s_user == null) ||
 					(s_list_tel[0] == null)) {
 				return;
 			}
-			Basesms bs = new Basesms(s_password, s_user, s_ip_device);
+			Basesms bs = new Basesms(s_password, s_user, s_ip_device, s_line);
 			System.out.println(s_list_tel[0]);
 			bs.send(s_list_tel[0], s_message);
 			
@@ -136,9 +104,6 @@ public class SendSMS {
 		finally {
 			System.out.println("Complite");
 		}
-		
 		return ;
 	}
-
-
 }
